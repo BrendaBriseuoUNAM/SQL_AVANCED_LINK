@@ -42,6 +42,38 @@ SELECT nombre,
    ) as Codigo
    From empleado;
 
+   <h2>IFNULL</h2>
+*Si es null escribe texto   
+SELECT IFNULL (NULL,"texto") as Resultado;
 
+SELECT nombre, IFNULL (email, telefono) as Contacto
+From cliente;
+* SELECCIONA EL NOMBRE SI EL EMAIL ES NULL COLOCA EL TELEFONO
+SELECT nombre, IFNULL (email, telefono) as Contacto
+From cliente;
+
+* SELECCIONA EL NOMBRE SI EL EMAIL ES NULL MUESTRA MENSAJE NO TIENE EMAIL REGISTRDO
+SELECT nombre, IFNULL (( SELECT email FROM cliente WHERE id_Cliente = 1), 
+'No tiene email registrado') AS Email
+From cliente
+WHERE id_Cliente = 1;
+
+<h2>NULLIF</h2>
+
+SELECT NULLIF(1,1);
+
+SELECT NULLIF(1,2);
+
+SELECT NULLIF(sELECT precioUnitario FROM producto WHERE id_producto =1),
+(SELECT precioUnitario FROM producto WHERE id_producto =2) );
+
+
+
+
+
+
+    
+
+   
 
   
