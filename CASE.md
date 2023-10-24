@@ -24,5 +24,24 @@ SELECT id_producto,id_fabricante,
   ELSE email
   END AS  email, edad
   from personas;
+  
+<h2>IF (Si-entonces, sino)</h2>
+SELECT IF (1>2,true,false) as Resultado;
+
+SELECT id_producto
+IF (cantidad>1,cantidad*precioUnitario,precioUnitario) 
+as Total FROM detalles;
+
+SELECT nombre,
+  IF (fechaingreso<'2016-12-31',CONCAT  (idEmpleado,'-16'),
+    IF (fechaingreso < '2017-12-31',CONCAT  (idEmpleado,'-17'),
+      IF (fechaingreso < '2018-12-31',CONCAT  (idEmpleado,'-18'),
+        CONCAT  (idEmpleado,'-19') 
+        )
+      )
+   ) as Codigo
+   From empleado;
+
+
 
   
